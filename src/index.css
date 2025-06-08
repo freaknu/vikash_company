@@ -1,0 +1,61 @@
+/* Image Scroller */
+.image-scroller {
+  display: flex;
+  overflow-x: hidden;
+  white-space: nowrap;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.image-scroller-inner {
+  display: flex;
+  animation: scroll 30s linear infinite;
+}
+
+.image-scroller-inner:hover {
+  animation-play-state: paused;
+}
+
+.image-scroller img {
+  margin-right: 15px;
+  flex-shrink: 0;
+  transition: transform 0.3s;
+}
+
+.image-scroller img:hover {
+  transform: scale(1.05);
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Stars */
+.star {
+  color: #d3d3d3;
+}
+
+.star.filled {
+  color: #ffc107;
+}
+
+/* Cards */
+.card {
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .action-buttons {
+    position: static;
+    margin-bottom: 20px;
+  }
+}
